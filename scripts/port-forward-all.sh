@@ -6,7 +6,7 @@ DEPLOY_JAEGER="${DEPLOY_JAEGER:-false}"
 DEPLOY_PROMETHEUS="${DEPLOY_PROMETHEUS:-false}"
 
 ./scripts/port-forward-bookbuyer-ui.sh &
-./scripts/port-forward-bookstore-ui.sh &
+#./scripts/port-forward-bookstore-ui.sh &
 ./scripts/port-forward-bookstore-ui-v2.sh &
 ./scripts/port-forward-bookstore-ui-v1.sh &
 ./scripts/port-forward-bookthief-ui.sh &
