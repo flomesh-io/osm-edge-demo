@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# shellcheck disable=SC1091
+source .env
+
 ENABLE_DEBUG_SERVER="${ENABLE_DEBUG_SERVER:-false}"
 DEPLOY_GRAFANA="${DEPLOY_GRAFANA:-false}"
 DEPLOY_JAEGER="${DEPLOY_JAEGER:-false}"
