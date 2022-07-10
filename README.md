@@ -46,21 +46,23 @@ make kind-up
 make demo-up
 ```
 
-### 2.2.3卸载演示环境
+# 3.对外开放演示环境
+
+```
+make demo-forward
+```
+
+# 4.环境卸载
+
+## 4.1卸载演示环境
 
 ```
 make demo-reset
 ```
 
-### 2.2.4关闭k8s集群
+## 4.2关闭k8s集群
 
 ```
 make kind-reset
-```
-
-# 3.对外开放演示环境
-
-```
-make demo-forward
 ```
 
