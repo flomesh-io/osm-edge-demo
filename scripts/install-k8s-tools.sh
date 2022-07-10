@@ -21,8 +21,6 @@ sudo tee /etc/apt/sources.list.d/kubernetes.list <<-'EOF'
 deb http://mirrors.ustc.edu.cn/kubernetes/apt kubernetes-xenial main
 EOF
 
-curl https://mirrors.ustc.edu.cn/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add -
-
 sudo apt -y update
 
 sudo apt install -y kubelet=1.23.4-00 kubeadm=1.23.4-00 kubectl=1.23.4-00
