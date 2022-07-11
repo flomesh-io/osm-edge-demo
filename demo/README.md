@@ -15,13 +15,12 @@
 1. Provision access to a Kubernetes cluster. Any certified conformant Kubernetes cluster (version 1.15 or higher) can be used. Here are a couple of options:
 	- **Option 1:** Local [kind](https://kind.sigs.k8s.io/) cluster
 	    - [Install kind](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
-	       - `brew install kind` on macOS
 	    - Provision a local cluster and registry in Docker: `make kind-up`
 	- **Option 2:** A Kubernetes cluster - use an already provisioned cluster config, either in the default location ($HOME/.kube/config) or referenced by the $KUBECONFIG environment variable.
       - Set `CTR_REGISTRY` in your `.env` file to a container registry you have permission to push and pull from.
       - Ensure you are logged into the container registry using: `docker login <registry url>`
 
-    We will use images from [Docker Hub](https://hub.docker.com/r/openservicemesh/osm-controller). Ensure you can pull these containers using: `docker pull openservicemesh/osm-controller`
+    We will use images from [Docker Hub](https://hub.docker.com/r/flomesh/osm-edge-controller). Ensure you can pull these containers using: `docker pull flomesh/osm-edge-controller`
 
 ## Run the Demo
 From the root of this repository execute:
@@ -36,8 +35,6 @@ By default:
 - Jaeger is not deployed by the demo script. To enable Jaeger deployment, set the variable `DEPLOY_JAEGER` in your `.env` file to `true`. The section on Jaeger [below](#view-mesh-topology-with-jaeger) describes tracing with Jaeger.
 
 ### This script will:
-  - compile OSM's control plane (`cmd/osm-controller`), create a separate container image and push it to the workstation's default container registry (See `~/.docker/config.json`)
-  - build and push demo application images described below
   - create the following topology in Kubernetes:
 
 	![Graph](graph.svg)
