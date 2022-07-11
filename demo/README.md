@@ -1,15 +1,11 @@
-# How to Run the OSM Automated Demo
+# How to Run the OSM Edge Automated Demo
 
 ## System Requirements
-- MacOS, Linux or WSL2 on Windows
+- Ubuntu 20.04
 - make
 - Kubectl version 1.15 or higher
 - Docker CLI
-   - on a Debian based GNU/Linux system: `sudo apt-get install docker`
-   - on a macOS use `brew install docker` or alternatively visit [Docker for Mac](https://docs.docker.com/docker-for-mac/install/)
-   - on Windows visit [Docker for Windows](https://docs.docker.com/docker-for-windows/install/)
 - [Watch](http://www.linfo.org/watch.html)
-   - `brew install watch` on macOS
 
 ## Prerequisites
 1. Clone this repo on your workstation
@@ -26,13 +22,6 @@
       - Ensure you are logged into the container registry using: `docker login <registry url>`
 
     We will use images from [Docker Hub](https://hub.docker.com/r/openservicemesh/osm-controller). Ensure you can pull these containers using: `docker pull openservicemesh/osm-controller`
-
-### OpenShift
-If you are running the demo on an OpenShift cluster, there are additional prerequisites.
-
-1. Install the [oc CLI](https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html).
-1. Set `DEPLOY_ON_OPENSHIFT=true` in your `.env` file.
-    - This enables privileged init containers and links the image pull secrets to the service accounts. Privileged init containers are needed to program iptables on OpenShift.
 
 ## Run the Demo
 From the root of this repository execute:
