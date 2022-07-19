@@ -23,9 +23,11 @@ BOOKTHIEF_NAMESPACE="${BOOKTHIEF_NAMESPACE:-bookthief}"
 BOOKWAREHOUSE_NAMESPACE="${BOOKWAREHOUSE_NAMESPACE:-bookwarehouse}"
 CERT_MANAGER="${CERT_MANAGER:-tresor}"
 CTR_REGISTRY="${CTR_REGISTRY:-flomesh}"
+CTR_TAG="${CTR_TAG:-latest}"
+SIDECAR_IMAGE="${SIDECAR_IMAGE:-flomesh/pipy}"
+PIPY_REPO_IMAGE="${PIPY_REPO_IMAGE:-flomesh/pipy-repo}"
 CTR_REGISTRY_CREDS_NAME="${CTR_REGISTRY_CREDS_NAME:-acr-creds}"
 DEPLOY_TRAFFIC_SPLIT="${DEPLOY_TRAFFIC_SPLIT:-true}"
-CTR_TAG="${CTR_TAG:-latest}"
 IMAGE_PULL_POLICY="${IMAGE_PULL_POLICY:-Always}"
 ENABLE_DEBUG_SERVER="${ENABLE_DEBUG_SERVER:-false}"
 ENABLE_EGRESS="${ENABLE_EGRESS:-false}"
@@ -110,6 +112,8 @@ if [ "$CERT_MANAGER" = "vault" ]; then
     --set=osm.enableFluentbit="$ENABLE_FLUENTBIT" \
     --set=osm.deployPrometheus="$DEPLOY_PROMETHEUS" \
     --set=osm.sidecarLogLevel="$SIDECAR_LOG_LEVEL" \
+    --set=osm.sidecarImage="$SIDECAR_IMAGE" \
+    --set=osm.pipyRepoImage="$PIPY_REPO_IMAGE" \
     --set=osm.controllerLogLevel="warn" \
     --timeout="$TIMEOUT" \
     $optionalInstallArgs
@@ -134,6 +138,8 @@ else
     --set=osm.enableFluentbit="$ENABLE_FLUENTBIT" \
     --set=osm.deployPrometheus="$DEPLOY_PROMETHEUS" \
     --set=osm.sidecarLogLevel="$SIDECAR_LOG_LEVEL" \
+    --set=osm.sidecarImage="$SIDECAR_IMAGE" \
+    --set=osm.pipyRepoImage="$PIPY_REPO_IMAGE" \
     --set=osm.controllerLogLevel="warn" \
     --timeout="$TIMEOUT" \
     $optionalInstallArgs
