@@ -7,7 +7,7 @@ source .env
 
 OSM_POD=$(kubectl get pods -n "$K8S_NAMESPACE" --no-headers  --selector app=osm-controller | awk 'NR==1{print $1}')
 
-if [ -z "$POD" ]; then
+if [ -z "$OSM_POD" ]; then
     echo "Not found pod: osm-controller"
     exit 1
 fi

@@ -4,6 +4,9 @@ This repository contains a set of scripts and samples to be used in [osm-edge](h
 # 1. Pre-requisites
 
 A running **Kubernetes** cluster (accessible via `kubectl`). If you don't have cluster accessible, you can proceed with instructions in section 1 on setting up **kind** cluster.
+- OS: **Ubuntu 20.04**
+- ARCH: **arm64/amd64**
+- K8s tools: **kubectl、helm**
 
 ## 1.kind cluster
 
